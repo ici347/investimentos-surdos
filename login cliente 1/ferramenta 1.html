@@ -1,3 +1,4 @@
+Pronto. Cada botão agora abre um link separado:
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -133,7 +134,7 @@ body::before{
         <div class="valor">3x de R$ 400,00 a cada 20 dias</div>
         <div class="label" style="margin-top:8px">Total: R$ 1.200,00</div>
       </div>
-      <button class="btn-comprar" onclick="abrirPaginaCompra()">COMPRAR AGORA</button>
+      <button class="btn-comprar" onclick="comprar1000()">COMPRAR AGORA</button>
     </div>
 
     <div class="card combo-500">
@@ -160,7 +161,7 @@ body::before{
         <div class="valor">3x de R$ 200,00 a cada 20 dias</div>
         <div class="label" style="margin-top:8px">Total: R$ 600,00</div>
       </div>
-      <button class="btn-comprar" onclick="abrirPaginaCompra()">COMPRAR AGORA</button>
+      <button class="btn-comprar" onclick="comprar500()">COMPRAR AGORA</button>
     </div>
 
     <div class="card combo-200">
@@ -187,7 +188,7 @@ body::before{
         <div class="valor">3x de R$ 80,00 a cada 20 dias</div>
         <div class="label" style="margin-top:8px">Total: R$ 240,00</div>
       </div>
-      <button class="btn-comprar" onclick="abrirPaginaCompra()">COMPRAR AGORA</button>
+      <button class="btn-comprar" onclick="comprar200()">COMPRAR AGORA</button>
     </div>
 
     <button class="btn-voltar" onclick="voltarMenu()">Voltar</button>
@@ -199,8 +200,16 @@ body::before{
   <div class="rodape">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
 
 <script>
-function abrirPaginaCompra(){
-  window.location.href = 'pagina-compra.html'; // coloca aqui o link da página
+function comprar1000(){
+  window.location.href = 'combo-1000.html'; // link do combo 1000
+}
+
+function comprar500(){
+  window.location.href = 'combo-500.html'; // link do combo 500
+}
+
+function comprar200(){
+  window.location.href = 'combo-200.html'; // link do combo 200
 }
 
 function voltarMenu(){
