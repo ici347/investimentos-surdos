@@ -1,3 +1,6 @@
+Seu código quebrou a estrutura do perfil. Tá faltando fechar a div `.dados` e a div `.perfil`, e você removeu o nome + ID que o JS tá tentando preencher.
+
+Aqui tá corrigido e funcionando:
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -68,6 +71,10 @@ body::before{
       <div class="perfil-top">
         <div class="perfil">
           <img src="https://via.placeholder.com/64" alt="Foto do Cliente" class="foto">
+          <div class="dados">
+            <h2 id="nome">João Silva Santos</h2>
+            <p>ID Cliente: <span id="idCliente">#48291</span></p>
+          </div>
         <button class="btn-config" onclick="abrirConfig()">⚙️</button>
       </div>
       
@@ -126,7 +133,6 @@ const cliente = {
   saldo: 'R$ 1.450,00',
   ganhos: 'R$ 320,50',
   renovacao: '05/05/2026',
-  diaSaque: 'Segunda-feira',
   dataSaque: '05/05/2026'
 };
 
@@ -137,7 +143,6 @@ document.getElementById('cadastro').innerText = cliente.cadastro;
 document.getElementById('saldo').innerText = cliente.saldo;
 document.getElementById('ganhos').innerText = cliente.ganhos;
 document.getElementById('renovacao').innerText = cliente.renovacao;
-document.getElementById('diaSaque').innerText = cliente.diaSaque;
 document.getElementById('dataSaque').innerText = cliente.dataSaque;
 document.querySelector('.foto').src = cliente.foto;
 
