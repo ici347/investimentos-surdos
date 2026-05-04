@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Perfil do Cliente</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  background:url('menu.jpeg') center/cover fixed;
+  color:#fff;
+  padding:12px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+body::before{
+  content:'';
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.7);
+  z-index:-1;
+}
+.container{width:100%;margin:0 auto;position:relative;z-index:1;flex:1}
+.card{background:rgba(26,26,26,0.85);backdrop-filter:blur(8px);border-radius:16px;padding:20px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.1)}
+
+.perfil-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.perfil{display:flex;align-items:center;gap:14px}
+.foto{width:64px;height:64px;border-radius:50%;background:#333;object-fit:cover;border:2px solid #7c3aed;flex-shrink:0}
+.dados h2{font-size:17px;margin-bottom:4px;word-break:break-word}
+.dados p{font-size:12px;color:#999}
+
+.btn-config{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:#fff
+}
+
+.info{display:grid;gap:10px}
+.linha{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
+.linha:last-child{border-bottom:none}
+.label{color:#bbb;font-size:13px}
+.valor{font-weight:600;font-size:13px;text-align:right}
+
+.saldo{background:linear-gradient(135deg,rgba(124,58,237,0.9),rgba(91,33,182,0.9));border:none}
+.saldo .label, .saldo .valor{color:#fff}
+.saldo .valor{font-size:22px}
+
+.ganhos{border:1px solid #7c3aed;background:rgba(26,26,26,0.85)}
+.ganhos .valor{color:#7c3aed;font-size:19px}
+
+.saque{border:1px solid #22c55e;background:rgba(26,26,26,0.85)}
+.saque .valor{color:#22c55e;font-size:16px}
+
+.btn-voltar{width:100%;padding:14px;margin-top:16px;border:1px solid rgba(255,255,255,0.2);border-radius:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;font-weight:600}
+
+.rodape{text-align:center;padding:20px 0 8px 0;color:rgba(255,255,255,0.4);font-size:11px;line-height:1.4}
+</style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="card">
+      <div class="perfil-top">
+        <div class="perfil">
+          <img src="https://via.placeholder.com/64" alt="Foto do Cliente" class="foto">
+          <div class="dados">
+            <h2 id="nome">João Silva Santos</h2>
+            <p>ID Cliente: <span id="idCliente">#48291</span></p>
+          </div>
+        <button class="btn-config" onclick="abrirConfig()">⚙️</button>
+      </div>
+      
+      <div class="info">
+        <div class="linha">
+          <span class="label">Nome Completo</span>
+          <span class="valor" id="nomeCompleto">João Silva Santos</span>
+        </div>
+        <div class="linha">
+          <span class="label">Nº Cadastro</span>
+          <span class="valor" id="cadastro">20260048291</span>
+        </div>
+        <div class="linha">
+          <span class="label">Renovação do Valor</span>
+          <span class="valor" id="renovacao">05/05/2026</span>
+        </div>
+        <div class="linha">
+          <span class="label">Status</span>
+          <span class="valor" style="color:#22c55e">Ativo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card saldo">
+      <div class="linha">
+        <span class="label">Saldo Atual</span>
+        <span class="valor" id="saldo">R$ 1.450,00</span>
+      </div>
+    </div>
+
+    <div class="card ganhos">
+      <div class="linha">
+        <span class="label">Ganhos Futuros</span>
+        <span class="valor" id="ganhos">R$ 320,50</span>
+      </div>
+    </div>
+
+    <div class="card saque">
+      <div class="linha">
+        <span class="label">Data do Saque</span>
+        <span class="valor" id="dataSaque">05/05/2026</span>
+      </div>
+    </div>
+
+    <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+  </div>
+
+  <div class="rodape">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
+
+<script>
+const cliente = {
+  nome: 'João Silva Santos',
+  id: '#48291',
+  cadastro: '20260048291',
+  foto: 'https://via.placeholder.com/64',
+  saldo: 'R$ 1.450,00',
+  ganhos: 'R$ 320,50',
+  renovacao: '05/05/2026',
+  diaSaque: 'Segunda-feira',
+  dataSaque: '05/05/2026'
+};
+
+document.getElementById('nome').innerText = cliente.nome;
+document.getElementById('nomeCompleto').innerText = cliente.nome;
+document.getElementById('idCliente').innerText = cliente.id;
+document.getElementById('cadastro').innerText = cliente.cadastro;
+document.getElementById('saldo').innerText = cliente.saldo;
+document.getElementById('ganhos').innerText = cliente.ganhos;
+document.getElementById('renovacao').innerText = cliente.renovacao;
+document.getElementById('diaSaque').innerText = cliente.diaSaque;
+document.getElementById('dataSaque').innerText = cliente.dataSaque;
+document.querySelector('.foto').src = cliente.foto;
+
+function abrirConfig(){
+  alert('Abrir configurações do perfil');
+}
+</script>
+</body>
+</html>
