@@ -34,5 +34,21 @@ input::placeholder{color:#bbb}
   </a>
   <p class="descricao">© 2026 Sistema Seguro. Todos os direitos reservados.</p>
 </form>
+
+  <script>
+document.querySelector('.login').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const usuario = document.querySelector('input[type="text"]').value;
+  const senha = document.querySelector('input[type="password"]').value;
+  
+  // Troca aqui pelo usuário e senha que você quer
+  if (usuario === 'teste' && senha === '1') {
+    window.location.href = 'painel.html'; // página pra onde vai depois do login
+  } else {
+    alert('Usuário ou senha incorretos');
+  }
+});
+</script>
 </body>
 </html>
