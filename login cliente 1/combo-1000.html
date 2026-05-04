@@ -50,14 +50,13 @@ html,body{
 </head>
 <body>
   <div class="tela-cheia">
-    <button class="btn-voltar" onclick="voltar()">← Voltar</button>
+    <button class="btn-voltar" onclick="voltarPagina()">← Voltar</button>
     <img src="sua-imagem.jpg" alt="Imagem Centralizada">
   </div>
 
 <script>
-function voltar(){
-  window.history.back(); // volta pra página anterior
-  // ou use: window.location.href = 'menu.html'; pra ir pra um menu específico
+function voltarPagina(){
+  window.location.href = 'menu.html'; // coloca aqui o link da outra página
 }
 </script>
 </body>
