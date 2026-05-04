@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Combos de Investimento</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  background:url('ferramenta 1.jpeg') center/cover fixed;
+  color:#fff;
+  padding:16px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+body::before{
+  content:'';
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.75);
+  z-index:-1;
+}
+.container{width:100%;max-width:420px;margin:0 auto;position:relative;z-index:1;flex:1}
+.titulo{text-align:center;font-size:20px;font-weight:700;margin-bottom:20px}
+
+.card{
+  background:rgba(26,26,26,0.9);
+  backdrop-filter:blur(8px);
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:16px;
+  border:1px solid rgba(255,255,255,0.1);
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+}
+.combo-1000::before{background:linear-gradient(90deg,#f59e0b,#d97706)}
+.combo-500::before{background:linear-gradient(90deg,#7c3aed,#5b21b6)}
+.combo-200::before{background:linear-gradient(90deg,#22c55e,#16a34a)}
+
+.card-topo{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.combo-nome{font-size:18px;font-weight:700}
+.combo-1000.combo-nome{color:#f59e0b}
+.combo-500.combo-nome{color:#7c3aed}
+.combo-200.combo-nome{color:#22c55e}
+.tag{font-size:10px;padding:4px 8px;border-radius:6px;font-weight:600;background:rgba(255,255,255,0.1)}
+
+.info{display:grid;gap:12px;margin-bottom:16px}
+.linha{display:flex;justify-content:space-between;align-items:center}
+.label{color:#bbb;font-size:13px}
+.valor{font-weight:600;font-size:14px}
+
+.destaque{background:rgba(255,255,255,0.05);padding:12px;border-radius:10px;margin-bottom:16px}
+.destaque.label{font-size:11px;text-transform:uppercase;margin-bottom:4px}
+.destaque.valor{font-size:16px;color:#fff}
+
+.btn-comprar{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  font-size:15px;
+  font-weight:700;
+  color:#fff;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.btn-voltar{
+  width:100%;
+  padding:14px;
+  margin-top:8px;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:10px;
+  background:rgba(255,255,255,0.05);
+  color:#fff;
+  font-size:15px;
+  font-weight:600
+}
+
+.btn-suporte{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  box-shadow:0 4px 12px rgba(37,211,102,0.4);
+  z-index:10;
+  text-decoration:none;
+}
+
+.rodape{text-align:center;padding:20px 0 80px 0;color:rgba(255,255,255,0.4);font-size:11px}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo">Escolha seu Combo</h1>
+
+    <div class="card combo-1000">
+      <div class="card-topo">
+        <span class="combo-nome">COMBO 1000</span>
+        <span class="tag">MAIS VENDIDO</span>
+      </div>
+      <div class="info">
+        <div class="linha">
+          <span class="label">Valor da Compra</span>
+          <span class="valor" id="valor1000">R$ 1.000,00</span>
+        </div>
+        <div class="linha">
+          <span class="label">Taxa</span>
+          <span class="valor" id="taxa1000">R$ 50,00</span>
+        </div>
+        <div class="linha">
+          <span class="label">Total</span>
+          <span class="valor" id="total1000">R$ 1.050,00</span>
+        </div>
+      </div>
+      <div class="destaque">
+        <div class="label">Você Recebe</div>
+        <div class="valor">3x de R$ 400,00 a cada 20 dias</div>
+        <div class="label" style="margin-top:8px">Total: R$ 1.200,00</div>
+      </div>
+      <button class="btn-comprar" onclick="comprar(1000)">COMPRAR AGORA</button>
+    </div>
+
+    <div class="card combo-500">
+      <div class="card-topo">
+        <span class="combo-nome">COMBO 500</span>
+        <span class="tag">POPULAR</span>
+      </div>
+      <div class="info">
+        <div class="linha">
+          <span class="label">Valor da Compra</span>
+          <span class="valor" id="valor500">R$ 500,00</span>
+        </div>
+        <div class="linha">
+          <span class="label">Taxa</span>
+          <span class="valor" id="taxa500">R$ 25,00</span>
+        </div>
+        <div class="linha">
+          <span class="label">Total</span>
+          <span class="valor" id="total500">R$ 525,00</span>
+        </div>
+      </div>
+      <div class="destaque">
+        <div class="label">Você Recebe</div>
+        <div class="valor">3x de R$ 200,00 a cada 20 dias</div>
+        <div class="label" style="margin-top:8px">Total: R$ 600,00</div>
+      </div>
+      <button class="btn-comprar" onclick="comprar(500)">COMPRAR AGORA</button>
+    </div>
+
+    <div class="card combo-200">
+      <div class="card-topo">
+        <span class="combo-nome">COMBO 200</span>
+        <span class="tag">INICIANTE</span>
+      </div>
+      <div class="info">
+        <div class="linha">
+          <span class="label">Valor da Compra</span>
+          <span class="valor" id="valor200">R$ 200,00</span>
+        </div>
+        <div class="linha">
+          <span class="label">Taxa</span>
+          <span class="valor" id="taxa200">R$ 10,00</span>
+        </div>
+        <div class="linha">
+          <span class="label">Total</span>
+          <span class="valor" id="total200">R$ 210,00</span>
+        </div>
+      <div class="destaque">
+        <div class="label">Você Recebe</div>
+        <div class="valor">3x de R$ 80,00 a cada 20 dias</div>
+        <div class="label" style="margin-top:8px">Total: R$ 240,00</div>
+      </div>
+      <button class="btn-comprar" onclick="comprar(200)">COMPRAR AGORA</button>
+    </div>
+
+    <button class="btn-voltar" onclick="voltarMenu()">Voltar</button>
+
+  </div>
+
+  <a href="" class="btn-suporte" target="_blank">💬</a>
+
+  <div class="rodape">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
+
+<script>
+const combos = {
+  1000: {valor: 1000, taxa: 50, parcela: 400},
+  500: {valor: 500, taxa: 25, parcela: 200},
+  200: {valor: 200, taxa: 10, parcela: 80}
+};
+
+function comprar(valor){
+  const combo = combos[valor];
+  alert(`Combo ${valor} selecionado!\nTotal: R$ ${combo.valor + combo.taxa}\nVocê recebe 3x de R$ ${combo.parcela}`);
+  // window.location.href = `checkout.html?combo=${valor}`;
+}
+
+function voltarMenu(){
+  window.location.href = 'menu.html'; // troca aqui pro link da sua ferramenta
+}
+</script>
+</body>
+</html>
