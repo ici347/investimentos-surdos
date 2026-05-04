@@ -117,15 +117,15 @@ body::before{
       <div class="info">
         <div class="linha">
           <span class="label">Valor da Compra</span>
-          <span class="valor" id="valor1000">R$ 1.000,00</span>
+          <span class="valor">R$ 1.000,00</span>
         </div>
         <div class="linha">
           <span class="label">Taxa</span>
-          <span class="valor" id="taxa1000">R$ 50,00</span>
+          <span class="valor">R$ 50,00</span>
         </div>
         <div class="linha">
           <span class="label">Total</span>
-          <span class="valor" id="total1000">R$ 1.050,00</span>
+          <span class="valor">R$ 1.050,00</span>
         </div>
       </div>
       <div class="destaque">
@@ -133,7 +133,7 @@ body::before{
         <div class="valor">3x de R$ 400,00 a cada 20 dias</div>
         <div class="label" style="margin-top:8px">Total: R$ 1.200,00</div>
       </div>
-      <button class="btn-comprar" onclick="comprar(1000)">COMPRAR AGORA</button>
+      <button class="btn-comprar" onclick="abrirPaginaCompra()">COMPRAR AGORA</button>
     </div>
 
     <div class="card combo-500">
@@ -144,15 +144,15 @@ body::before{
       <div class="info">
         <div class="linha">
           <span class="label">Valor da Compra</span>
-          <span class="valor" id="valor500">R$ 500,00</span>
+          <span class="valor">R$ 500,00</span>
         </div>
         <div class="linha">
           <span class="label">Taxa</span>
-          <span class="valor" id="taxa500">R$ 25,00</span>
+          <span class="valor">R$ 25,00</span>
         </div>
         <div class="linha">
           <span class="label">Total</span>
-          <span class="valor" id="total500">R$ 525,00</span>
+          <span class="valor">R$ 525,00</span>
         </div>
       </div>
       <div class="destaque">
@@ -160,7 +160,7 @@ body::before{
         <div class="valor">3x de R$ 200,00 a cada 20 dias</div>
         <div class="label" style="margin-top:8px">Total: R$ 600,00</div>
       </div>
-      <button class="btn-comprar" onclick="comprar(500)">COMPRAR AGORA</button>
+      <button class="btn-comprar" onclick="abrirPaginaCompra()">COMPRAR AGORA</button>
     </div>
 
     <div class="card combo-200">
@@ -171,47 +171,40 @@ body::before{
       <div class="info">
         <div class="linha">
           <span class="label">Valor da Compra</span>
-          <span class="valor" id="valor200">R$ 200,00</span>
+          <span class="valor">R$ 200,00</span>
         </div>
         <div class="linha">
           <span class="label">Taxa</span>
-          <span class="valor" id="taxa200">R$ 10,00</span>
+          <span class="valor">R$ 10,00</span>
         </div>
         <div class="linha">
           <span class="label">Total</span>
-          <span class="valor" id="total200">R$ 210,00</span>
+          <span class="valor">R$ 210,00</span>
         </div>
+      </div>
       <div class="destaque">
         <div class="label">Você Recebe</div>
         <div class="valor">3x de R$ 80,00 a cada 20 dias</div>
         <div class="label" style="margin-top:8px">Total: R$ 240,00</div>
       </div>
-      <button class="btn-comprar" onclick="comprar(200)">COMPRAR AGORA</button>
+      <button class="btn-comprar" onclick="abrirPaginaCompra()">COMPRAR AGORA</button>
     </div>
 
     <button class="btn-voltar" onclick="voltarMenu()">Voltar</button>
 
   </div>
 
-  <a href="" class="btn-suporte" target="_blank">💬</a>
+  <a href="https://wa.me/5516996547177" class="btn-suporte" target="_blank">💬</a>
 
   <div class="rodape">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
 
 <script>
-const combos = {
-  1000: {valor: 1000, taxa: 50, parcela: 400},
-  500: {valor: 500, taxa: 25, parcela: 200},
-  200: {valor: 200, taxa: 10, parcela: 80}
-};
-
-function comprar(valor){
-  const combo = combos[valor];
-  alert(`Combo ${valor} selecionado!\nTotal: R$ ${combo.valor + combo.taxa}\nVocê recebe 3x de R$ ${combo.parcela}`);
-  // window.location.href = `checkout.html?combo=${valor}`;
+function abrirPaginaCompra(){
+  window.location.href = 'pagina-compra.html'; // coloca aqui o link da página
 }
 
 function voltarMenu(){
-  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/menu.html'; // troca aqui pro link da sua ferramenta
+  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/menu.html';
 }
 </script>
 </body>
