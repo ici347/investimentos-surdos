@@ -112,7 +112,7 @@ body::before{
       </div>
     </div>
 
-    <button class="btn-voltar" onclick="window.history.back()">Sair</button>
+    <button class="btn-voltar" onclick="sairMenu()">Sair</button>
   </div>
 
   <div class="rodape">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
@@ -137,8 +137,13 @@ document.getElementById('dataSaque').innerText = cliente.dataSaque;
 document.querySelector('.foto').src = cliente.foto;
 
 function abrirConfig(){
-  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/ferramenta 1.html'; // coloca aqui o link do seu menu
+  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/ferramenta 1.html';
+}
+
+function sairMenu(){
+  window.location.href = 'menu.html'; // troca aqui pro link do outro menu
 }
 </script>
 </body>
 </html>
+
