@@ -20,6 +20,8 @@
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .btn-voltar {
@@ -133,6 +135,12 @@
   .btn-copiar.copiado {
     background: #4ade80;
   }
+
+  .footer {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
@@ -143,29 +151,31 @@
     
     <div class="linha">
       <span>Valor</span>
-      <span class="valor">R$ 5.000,00</span>
+      <span class="valor">R$ 10.000,00</span>
     </div>
     
     <div class="linha">
       <span>Taxa de serviço</span>
-      <span class="valor">R$ 150,00</span>
+      <span class="valor">R$ 200,00</span>
     </div>
     
     <div class="linha total">
       <span>Total a pagar</span>
-      <span class="valor-destaque">R$ 5.150,00</span>
+      <span class="valor-destaque">R$ 10.200,00</span>
     </div>
 
     <div class="box-pix">
       <div class="label-pix">Pix Copia e Cola</div>
-      <div class="codigo-pix" id="codigoPix">00020126720014br.gov.bcb.pix013616afc0a3-7406-4576-9d21-81b19fe05d290210COMBO-500052040000530398654075150.005802BR5924Marcelo Pereira da Silva6006Brasil62290525202605050322JSIHLPVUWNGU063045C4C</div>
+      <div class="codigo-pix" id="codigoPix">00020126720014br.gov.bcb.pix013616afc0a3-7406-4576-9d21-81b19fe05d290211COMBO-10000520400005303986540710200.005802BR5924Marcelo Pereira da Silva6006Brasil62290525202605050324O8Z6EQ2HSPYRW6304D20A</div>
       <button class="btn-copiar" onclick="copiarPix()">Copiar código Pix</button>
     </div>
   </div>
 
+  <div class="footer">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
+
 <script>
   function voltarPagina(){
-    window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/ferramenta 1.html'; // COLOCA AQUI O LINK DA OUTRA PÁGINA
+    window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/ferramenta 1.html';
   }
 
   function copiarPix() {
