@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrato de Investimento</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  color:#1c1c1e;
+  background:#fff;
+  padding:40px 20px;
+  line-height:1.6;
+}
+.pagina{
+  max-width:800px;
+  margin:0 auto;
+  background:#fff;
+}
+.header{
+  text-align:center;
+  border-bottom:3px solid #BF5AF2;
+  padding-bottom:20px;
+  margin-bottom:30px;
+}
+.header h1{
+  font-size:24px;
+  font-weight:700;
+  color:#1c1c1e;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.header .subtitulo{
+  font-size:14px;
+  color:#666;
+}
+.numero-contrato{
+  text-align:right;
+  font-size:12px;
+  color:#666;
+  margin-bottom:20px;
+}
+.secao{
+  margin-bottom:25px;
+  page-break-inside:avoid;
+}
+.secao-titulo{
+  background:#BF5AF2;
+  color:#fff;
+  padding:10px 15px;
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  margin-bottom:15px;
+}
+.campo{
+  display:flex;
+  padding:8px 0;
+  border-bottom:1px solid #e5e5e7;
+}
+.campo:last-child{border-bottom:none;}
+.campo .label{
+  width:200px;
+  font-weight:600;
+  font-size:13px;
+  color:#3a3a3c;
+}
+.campo .valor{
+  flex:1;
+  font-size:13px;
+  color:#1c1c1e;
+}
+.tabela-produtos{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+.tabela-produtos th{
+  background:#f2f2f7;
+  padding:10px;
+  text-align:left;
+  font-size:12px;
+  font-weight:600;
+  border:1px solid #d1d1d6;
+}
+.tabela-produtos td{
+  padding:10px;
+  font-size:12px;
+  border:1px solid #d1d1d6;
+}
+.tabela-produtos .selecionado{
+  background:rgba(191, 90, 242, 0.1);
+  font-weight:700;
+}
+.tabela-produtos .check{
+  color:#BF5AF2;
+  font-size:16px;
+}
+.regras{
+  font-size:12px;
+}
+.regras ol{
+  padding-left:20px;
+}
+.regras li{
+  margin-bottom:10px;
+  text-align:justify;
+}
+.regras strong{
+  color:#BF5AF2;
+}
+.assinatura-box{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+.assinatura{
+  text-align:center;
+}
+.assinatura .linha{
+  border-top:1px solid #1c1c1e;
+  margin-bottom:8px;
+  padding-top:40px;
+}
+.assinatura .nome{
+  font-size:12px;
+  font-weight:600;
+}
+.assinatura .cpf{
+  font-size:11px;
+  color:#666;
+  margin-top:4px;
+}
+.data-local{
+  text-align:center;
+  margin-top:40px;
+  font-size:12px;
+  color:#3a3a3c;
+}
+.btn-acoes{
+  position:fixed;
+  top:20px;
+  right:20px;
+  display:flex;
+  gap:10px;
+}
+.btn-acoes button{
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.btn-imprimir{
+  background:#BF5AF2;
+  color:#fff;
+}
+.btn-imprimir:hover{background:#a847d8;}
+.btn-voltar{
+  background:#8e8e93;
+  color:#fff;
+}
+.btn-voltar:hover{background:#6e6e73;}
+
+@media print{
+  body{padding:0;}
+  .btn-acoes{display:none;}
+  .secao{page-break-inside:avoid;}
+}
+
+@page{
+  size:A4;
+  margin:15mm;
+}
+</style>
+</head>
+<body>
+  <div class="btn-acoes">
+    <button class="btn-imprimir" onclick="window.print()">📄 Salvar PDF</button>
+    <button class="btn-voltar" onclick="voltarMenu()">Voltar</button>
+  </div>
+
+  <div class="pagina">
+    <div class="header">
+      <h1>Contrato de Investimento</h1>
+      <div class="subtitulo">Termo de Acordo e Compromisso</div>
+    </div>
+
+    <div class="numero-contrato">
+      <strong>Contrato Nº:</strong> <span id="numContrato">#2026-48291</span><br>
+      <strong>Data de Emissão:</strong> <span id="dataEmissao">15/04/2026</span>
+    </div>
+
+    <!-- 1. NÚMERO DO CADASTRO -->
+    <div class="secao">
+      <div class="secao-titulo">1. Número do Cadastro</div>
+      <div class="campo">
+        <div class="label">Nº Cadastro Cliente:</div>
+        <div class="valor" id="cadastro">20260048291</div>
+      </div>
+    </div>
+
+    <!-- 2. DADOS DO CADASTRO -->
+    <div class="secao">
+      <div class="secao-titulo">2. Dados do Cadastro</div>
+      <div class="campo">
+        <div class="label">Nome Completo:</div>
+        <div class="valor" id="nomeCompleto">Jessica Fernanda</div>
+      </div>
+      <div class="campo">
+        <div class="label">CPF:</div>
+        <div class="valor" id="cpf">000.000.000-00</div>
+      </div>
+      <div class="campo">
+        <div class="label">RG:</div>
+        <div class="valor" id="rg">00.000.000-0</div>
+      </div>
+      <div class="campo">
+        <div class="label">Data de Nascimento:</div>
+        <div class="valor" id="nascimento">01/01/1990</div>
+      </div>
+      <div class="campo">
+        <div class="label">Telefone:</div>
+        <div class="valor" id="telefone">(16) 99999-9999</div>
+      </div>
+      <div class="campo">
+        <div class="label">E-mail:</div>
+        <div class="valor" id="email">cliente@email.com</div>
+      </div>
+      <div class="campo">
+        <div class="label">Endereço:</div>
+        <div class="valor" id="endereco">Rua Exemplo, 123 - Centro - Franca/SP - CEP: 14400-000</div>
+      </div>
+    </div>
+
+    <!-- 3. COMPRA - ESCOLHA DO PRODUTO -->
+    <div class="secao">
+      <div class="secao-titulo">3. Produto Contratado</div>
+      <table class="tabela-produtos">
+        <thead>
+          <tr>
+            <th style="width:40px;">Sel.</th>
+            <th>Produto</th>
+            <th>Valor Investido</th>
+            <th>Retorno Previsto</th>
+            <th>Prazo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="combo-200">
+            <td class="check"></td>
+            <td>COMBO-200</td>
+            <td>R$ 230,00</td>
+            <td>R$ 450,00</td>
+            <td>60 dias</td>
+          </tr>
+          <tr id="combo-500">
+            <td class="check"></td>
+            <td>COMBO-500</td>
+            <td>R$ 550,00</td>
+            <td>R$ 801,00</td>
+            <td>60 dias</td>
+          </tr>
+          <tr id="combo-1000" class="selecionado">
+            <td class="check">✓</td>
+            <td>COMBO-1000</td>
+            <td>R$ 1.070,00</td>
+            <td>R$ 1.524,00</td>
+            <td>60 dias</td>
+          </tr>
+          <tr id="combo-2000">
+            <td class="check"></td>
+            <td>COMBO-2000</td>
+            <td>R$ 2.100,00</td>
+            <td>R$ 2.600,00</td>
+            <td>60 dias</td>
+          </tr>
+          <tr id="combo-5000">
+            <td class="check"></td>
+            <td>COMBO-5000</td>
+            <td>R$ 5.150,00</td>
+            <td>R$ 6.348,00</td>
+            <td>60 dias</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="campo" style="margin-top:15px;">
+        <div class="label">Data da Compra:</div>
+        <div class="valor" id="dataCompra">15/04/2026</div>
+      </div>
+      <div class="campo">
+        <div class="label">Data Prevista Recebimento:</div>
+        <div class="valor" id="dataRecebimento">20/05/2026</div>
+      </div>
+    </div>
+
+    <!-- 4. REGRAS -->
+    <div class="secao">
+      <div class="secao-titulo">4. Cláusulas e Regras de Conduta</div>
+      <div class="regras">
+        <ol>
+          <li><strong>DIFAMAÇÃO:</strong> É expressamente proibido ao CONTRATANTE difamar, caluniar ou injuriar a empresa, seus representantes ou demais investidores, seja por meios digitais ou físicos. A violação resultará em rescisão imediata do contrato e medidas legais cabíveis.</li>
+          
+          <li><strong>DISCURSOS DE ÓDIO:</strong> Não serão tolerados discursos de ódio, discriminação ou preconceito de qualquer natureza. O CONTRATANTE compromete-se a manter postura ética e respeitosa em todas as interações relacionadas ao investimento.</li>
+          
+          <li><strong>QUEBRA DE PROMESSA:</strong> O não cumprimento das obrigações assumidas neste contrato, incluindo pagamentos e prazos acordados, acarretará em multa de 20% sobre o valor investido, além de juros de 1% ao mês.</li>
+          
+          <li><strong>FALSIFICAÇÃO:</strong> A apresentação de documentos falsos, dados incorretos ou tentativa de fraude resultará em rescisão imediata, perda total do valor investido e comunicação às autoridades competentes.</li>
+          
+          <li><strong>RENOVAÇÃO DO PRODUTO:</strong> A renovação do investimento ocorrerá automaticamente em <span id="renovacao">27/05/2026</span>, salvo manifestação contrária do CONTRATANTE com 7 dias de antecedência. O valor será reinvestido nas mesmas condições, exceto se acordado diferentemente entre as partes.</li>
+          
+          <li><strong>CONFIDENCIALIDADE:</strong> Todas as informações sobre estratégias, valores e operações são confidenciais e não podem ser divulgadas a terceiros sem autorização expressa.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 5. DADOS PARA TRANSFERÊNCIA PIX -->
+    <div class="secao">
+      <div class="secao-titulo">5. Dados Bancários para Recebimento - PIX</div>
+      <div class="campo">
+        <div class="label">Titular da Conta:</div>
+        <div class="valor" id="titularPix">Jessica Fernanda</div>
+      </div>
+      <div class="campo">
+        <div class="label">CPF do Titular:</div>
+        <div class="valor" id="cpfPix">000.000.000-00</div>
+      </div>
+      <div class="campo">
+        <div class="label">Chave PIX:</div>
+        <div class="valor" id="chavePix">(16) 99999-9999</div>
+      </div>
+      <div class="campo">
+        <div class="label">Tipo de Chave:</div>
+        <div class="valor" id="tipoChave">Telefone</div>
+      </div>
+      <div class="campo">
+        <div class="label">Banco:</div>
+        <div class="valor" id="banco">000 - Banco Exemplo</div>
+      </div>
+    </div>
+
+    <!-- 6. DATA E ASSINATURA -->
+    <div class="secao">
+      <div class="secao-titulo">6. Data e Assinaturas</div>
+      <div class="data-local">
+        Franca/SP, <span id="dataAssinatura">15 de abril de 2026</span>
+      </div>
+      
+      <div class="assinatura-box">
+        <div class="assinatura">
+          <div class="linha"></div>
+          <div class="nome" id="nomeAssinatura">Jessica Fernanda</div>
+          <div class="cpf">CPF: <span id="cpfAssinatura">000.000.000-00</span></div>
+          <div style="font-size:11px;color:#666;margin-top:4px;">CONTRATANTE</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+// Dados do contrato - Troca aqui pelos dados reais
+const contrato = {
+  numContrato: '#2026-48291',
+  dataEmissao: '15/04/2026',
+  cadastro: '20260048291',
+  nomeCompleto: 'Jessica Fernanda',
+  cpf: '000.000.000-00',
+  rg: '00.000.000-0',
+  nascimento: '01/01/1990',
+  telefone: '(16) 99999-9999',
+  email: 'cliente@email.com',
+  endereco: 'Rua Exemplo, 123 - Centro - Franca/SP - CEP: 14400-000',
+  produtoSelecionado: 'combo-1000', // combo-200, combo-500, combo-1000, combo-2000, combo-5000
+  dataCompra: '15/04/2026',
+  dataRecebimento: '20/05/2026',
+  renovacao: '27/05/2026',
+  titularPix: 'Jessica Fernanda',
+  cpfPix: '000.000.000-00',
+  chavePix: '(16) 99999-9999',
+  tipoChave: 'Telefone',
+  banco: '000 - Banco Exemplo',
+  dataAssinatura: '15 de abril de 2026'
+};
+
+// Preenche os dados
+document.getElementById('numContrato').innerText = contrato.numContrato;
+document.getElementById('dataEmissao').innerText = contrato.dataEmissao;
+document.getElementById('cadastro').innerText = contrato.cadastro;
+document.getElementById('nomeCompleto').innerText = contrato.nomeCompleto;
+document.getElementById('cpf').innerText = contrato.cpf;
+document.getElementById('rg').innerText = contrato.rg;
+document.getElementById('nascimento').innerText = contrato.nascimento;
+document.getElementById('telefone').innerText = contrato.telefone;
+document.getElementById('email').innerText = contrato.email;
+document.getElementById('endereco').innerText = contrato.endereco;
+document.getElementById('dataCompra').innerText = contrato.dataCompra;
+document.getElementById('dataRecebimento').innerText = contrato.dataRecebimento;
+document.getElementById('renovacao').innerText = contrato.renovacao;
+document.getElementById('titularPix').innerText = contrato.titularPix;
+document.getElementById('cpfPix').innerText = contrato.cpfPix;
+document.getElementById('chavePix').innerText = contrato.chavePix;
+document.getElementById('tipoChave').innerText = contrato.tipoChave;
+document.getElementById('banco').innerText = contrato.banco;
+document.getElementById('dataAssinatura').innerText = contrato.dataAssinatura;
+document.getElementById('nomeAssinatura').innerText = contrato.nomeCompleto;
+document.getElementById('cpfAssinatura').innerText = contrato.cpf;
+
+// Marca o produto selecionado
+document.querySelectorAll('.tabela-produtos tr').forEach(tr => {
+  tr.classList.remove('selecionado');
+  tr.querySelector('.check').innerText = '';
+});
+const produtoTr = document.getElementById(contrato.produtoSelecionado);
+produtoTr.classList.add('selecionado');
+produtoTr.querySelector('.check').innerText = '✓';
+
+// Volta pro menu principal
+function voltarMenu(){
+  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/menu.html';
+}
+</script>
+</body>
+</html>
