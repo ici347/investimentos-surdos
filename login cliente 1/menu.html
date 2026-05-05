@@ -11,7 +11,7 @@ body{
   height:100dvh;
   background:url('menu2.jpeg') center/cover fixed;
   color:#f5f5f7;
-  padding:16px;
+  padding:12px;
   position:relative;
   display:flex;
   align-items:center;
@@ -24,40 +24,40 @@ body::before{
   background:rgba(0, 0, 0, 0.7);
   z-index:-1;
 }
-.container{width:100%;max-width:400px;position:relative;z-index:1}
+.container{width:100%;max-width:380px;position:relative;z-index:1}
 
 .card{
   background:rgba(28, 28, 30, 0.75);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
-  border-radius:20px;
-  padding:24px;
-  margin-bottom:14px;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:10px;
   border:0.5px solid rgba(255,255,255,0.15);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
 }
 
-.topo{display:grid;grid-template-columns:74px 1fr;gap:20px;align-items:start;margin-bottom:8px}
-.lado-foto{display:flex;flex-direction:column;align-items:center;gap:14px}
+.topo{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;margin-bottom:6px}
+.lado-foto{display:flex;flex-direction:column;align-items:center;gap:10px}
 .foto{
-  width:74px;height:74px;border-radius:50%;
+  width:64px;height:64px;border-radius:50%;
   background:#1c1e;object-fit:cover;
-  border:2.5px solid #0A84FF
+  border:2px solid #0A84FF
 }
 
 .btn-config{
-  height:40px;
-  padding:0 18px;
-  border-radius:20px;
+  height:34px;
+  padding:0 14px;
+  border-radius:17px;
   background:rgba(28, 28, 30, 0.75);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border:0.5px solid rgba(255,255,255,0.15);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size:15px;
+  font-size:13px;
   font-weight:600;
   color:#f5f5f7;
   letter-spacing:-0.3px;
@@ -70,42 +70,42 @@ body::before{
 }
 .btn-config:active{transform:scale(0.95);}
 
-.info{display:grid;gap:2px}
+.info{display:grid;gap:0px}
 .linha{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  gap:5px;
-  padding:13px 0;
+  gap:3px;
+  padding:9px 0;
   border-bottom:0.5px solid rgba(84,84,88,0.6)
 }
-.linha:last-child{border-bottom:none;flex-direction:row;align-items:center;justify-content:space-between}
-.label{color:rgba(235,235,245,0.6);font-size:12px;letter-spacing:0.4px;text-transform:uppercase;font-weight:600}
-.valor{font-weight:600;font-size:17px;color:#f5f5f7;letter-spacing:-0.4px;line-height:1.25;word-break:break-word}
+.linha:last-child{border-bottom:none;flex-direction:row;align-items:center;justify-content:space-between;padding-bottom:0}
+.label{color:rgba(235,235,245,0.6);font-size:11px;letter-spacing:0.4px;text-transform:uppercase;font-weight:600}
+.valor{font-weight:600;font-size:15px;color:#f5f5f7;letter-spacing:-0.4px;line-height:1.2;word-break:break-word}
 
 .saldo{
   background:rgba(10, 132, 255, 0.2);
   border:0.5px solid rgba(10, 132, 255, 0.5);
 }
-.saldo .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:8px 0}
-.saldo .label{color:rgba(255,255,255,0.8);font-size:15px;text-transform:none}
-.saldo .valor{font-size:30px;font-weight:700;letter-spacing:-0.6px}
+.saldo .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:6px 0}
+.saldo .label{color:rgba(255,255,255,0.8);font-size:14px;text-transform:none}
+.saldo .valor{font-size:26px;font-weight:700;letter-spacing:-0.6px}
 
 .ganhos{
   border:0.5px solid rgba(48, 209, 88, 0.4);
   background:rgba(28, 28, 30, 0.65);
 }
-.ganhos .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:8px 0}
-.ganhos .label{text-transform:none;font-size:15px}
-.ganhos .valor{color:#30D158;font-size:21px;font-weight:600}
+.ganhos .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:6px 0}
+.ganhos .label{text-transform:none;font-size:14px}
+.ganhos .valor{color:#30D158;font-size:19px;font-weight:600}
 
 .saque{
   border:0.5px solid rgba(100, 210, 255, 0.4);
   background:rgba(28, 28, 30, 0.65);
 }
-.saque .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:8px 0}
-.saque .label{text-transform:none;font-size:15px}
-.saque .valor{color:#64D2FF;font-size:18px;font-weight:600}
+.saque .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:6px 0}
+.saque .label{text-transform:none;font-size:14px}
+.saque .valor{color:#64D2FF;font-size:16px;font-weight:600}
 
 .extrato{
   border:0.5px solid rgba(255, 159, 10, 0.4);
@@ -118,20 +118,20 @@ body::before{
   transform:scale(1.02);
 }
 .extrato:active{transform:scale(0.98);}
-.extrato .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:8px 0}
-.extrato .label{text-transform:none;font-size:15px}
-.extrato .valor{color:#FF9F0A;font-size:16px;font-weight:600}
+.extrato .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:6px 0}
+.extrato .label{text-transform:none;font-size:14px}
+.extrato .valor{color:#FF9F0A;font-size:14px;font-weight:600}
 
 .btn-voltar{
   width:100%;
-  padding:16px;
-  margin-top:8px;
+  padding:14px;
+  margin-top:6px;
   border:none;
-  border-radius:14px;
+  border-radius:12px;
   background:rgba(118,118,128,0.24);
   backdrop-filter:saturate(180%) blur(20px);
   color:#fff;
-  font-size:17px;
+  font-size:16px;
   font-weight:600;
   letter-spacing:-0.4px;
   cursor:pointer;
@@ -139,7 +139,7 @@ body::before{
 }
 .btn-voltar:active{transform:scale(0.98);background:rgba(118,118,128,0.32)}
 
-.rodape{text-align:center;padding:18px 0 0 0;color:rgba(235,235,245,0.3);font-size:12px;letter-spacing:-0.08px}
+.rodape{text-align:center;padding:12px 0 0 0;color:rgba(235,235,245,0.3);font-size:11px;letter-spacing:-0.08px}
 </style>
 </head>
 <body>
@@ -148,7 +148,7 @@ body::before{
     <div class="card">
       <div class="topo">
         <div class="lado-foto">
-          <img src="https://via.placeholder.com/74" alt="Foto do Cliente" class="foto">
+          <img src="https://via.placeholder.com/64" alt="Foto do Cliente" class="foto">
           <button class="btn-config" onclick="abrirConfig()">Menu</button>
         </div>
         
@@ -167,7 +167,7 @@ body::before{
           </div>
           <div class="linha">
             <span class="label">Status</span>
-            <span class="valor" style="color:#30D158;font-size:15px">Ativo</span>
+            <span class="valor" style="color:#30D158;font-size:14px">Ativo</span>
           </div>
         </div>
       </div>
