@@ -31,8 +31,8 @@ body::before{
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-radius:16px;
-  padding:16px;
-  margin-bottom:10px;
+  padding:14px;
+  margin-bottom:9px;
   border:0.5px solid rgba(255,255,255,0.15);
   box-shadow: 0 4px 24px rgba(0,0,0,0.35);
 }
@@ -76,7 +76,7 @@ body::before{
   flex-direction:column;
   align-items:flex-start;
   gap:3px;
-  padding:9px 0;
+  padding:8px 0;
   border-bottom:0.5px solid rgba(84,84,88,0.6)
 }
 .linha:last-child{border-bottom:none;flex-direction:row;align-items:center;justify-content:space-between;padding-bottom:0}
@@ -89,7 +89,7 @@ body::before{
 }
 .saldo .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:6px 0}
 .saldo .label{color:rgba(255,255,255,0.8);font-size:14px;text-transform:none}
-.saldo .valor{font-size:26px;font-weight:700;letter-spacing:-0.6px}
+.saldo .valor{font-size:24px;font-weight:700;letter-spacing:-0.6px}
 
 .ganhos{
   border:0.5px solid rgba(48, 209, 88, 0.4);
@@ -97,7 +97,7 @@ body::before{
 }
 .ganhos .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:6px 0}
 .ganhos .label{text-transform:none;font-size:14px}
-.ganhos .valor{color:#30D158;font-size:19px;font-weight:600}
+.ganhos .valor{color:#30D158;font-size:18px;font-weight:600}
 
 .saque{
   border:0.5px solid rgba(100, 210, 255, 0.4);
@@ -122,16 +122,31 @@ body::before{
 .extrato .label{text-transform:none;font-size:14px}
 .extrato .valor{color:#FF9F0A;font-size:14px;font-weight:600}
 
+.termo{
+  border:0.5px solid rgba(191, 90, 242, 0.4);
+  background:rgba(28, 28, 30, 0.65);
+  cursor:pointer;
+  transition: all 0.2s ease;
+}
+.termo:hover{
+  background:rgba(191, 90, 242, 0.15);
+  transform:scale(1.02);
+}
+.termo:active{transform:scale(0.98);}
+.termo .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:6px 0}
+.termo .label{text-transform:none;font-size:14px}
+.termo .valor{color:#BF5AF2;font-size:14px;font-weight:600}
+
 .btn-voltar{
   width:100%;
-  padding:14px;
-  margin-top:6px;
+  padding:13px;
+  margin-top:5px;
   border:none;
   border-radius:12px;
   background:rgba(118,118,128,0.24);
   backdrop-filter:saturate(180%) blur(20px);
   color:#fff;
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
   letter-spacing:-0.4px;
   cursor:pointer;
@@ -139,7 +154,7 @@ body::before{
 }
 .btn-voltar:active{transform:scale(0.98);background:rgba(118,118,128,0.32)}
 
-.rodape{text-align:center;padding:12px 0 0 0;color:rgba(235,235,245,0.3);font-size:11px;letter-spacing:-0.08px}
+.rodape{text-align:center;padding:10px 0 0 0;color:rgba(235,235,245,0.3);font-size:10px;letter-spacing:-0.08px}
 </style>
 </head>
 <body>
@@ -167,7 +182,7 @@ body::before{
           </div>
           <div class="linha">
             <span class="label">Status</span>
-            <span class="valor" style="color:#30D158;font-size:14px">Ativo</span>
+            <span class="valor" style="color:#30D158;font-size:13px">Ativo</span>
           </div>
         </div>
       </div>
@@ -201,6 +216,13 @@ body::before{
       </div>
     </div>
 
+    <div class="card termo" onclick="abrirTermo()">
+      <div class="linha">
+        <span class="label">Termo de Acordo</span>
+        <span class="valor">Ver documento →</span>
+      </div>
+    </div>
+
     <button class="btn-voltar" onclick="sairMenu()">Sair</button>
     
     <div class="rodape">© 2026 Sistema Seguro</div>
@@ -231,6 +253,10 @@ function abrirConfig(){
 
 function abrirExtrato(){
   window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/extrato.html';
+}
+
+function abrirTermo(){
+  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/termo.html';
 }
 
 function sairMenu(){
