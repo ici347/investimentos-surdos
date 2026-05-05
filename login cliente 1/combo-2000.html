@@ -20,6 +20,8 @@
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .btn-voltar {
@@ -133,6 +135,12 @@
   .btn-copiar.copiado {
     background: #4ade80;
   }
+
+  .footer {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
@@ -163,9 +171,11 @@
     </div>
   </div>
 
+  <div class="footer">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
+
 <script>
   function voltarPagina(){
-    window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/ferramenta 1.html'; // COLOCA AQUI O LINK DA PÁGINA QUE QUER ABRIR
+    window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/ferramenta 1.html';
   }
 
   function copiarPix() {
