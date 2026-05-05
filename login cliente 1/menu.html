@@ -107,6 +107,21 @@ body::before{
 .saque .label{text-transform:none;font-size:15px}
 .saque .valor{color:#64D2FF;font-size:18px;font-weight:600}
 
+.extrato{
+  border:0.5px solid rgba(255, 159, 10, 0.4);
+  background:rgba(28, 28, 30, 0.65);
+  cursor:pointer;
+  transition: all 0.2s ease;
+}
+.extrato:hover{
+  background:rgba(255, 159, 10, 0.15);
+  transform:scale(1.02);
+}
+.extrato:active{transform:scale(0.98);}
+.extrato .linha{flex-direction:row;align-items:center;justify-content:space-between;border:none;padding:8px 0}
+.extrato .label{text-transform:none;font-size:15px}
+.extrato .valor{color:#FF9F0A;font-size:16px;font-weight:600}
+
 .btn-voltar{
   width:100%;
   padding:16px;
@@ -179,6 +194,13 @@ body::before{
       </div>
     </div>
 
+    <div class="card extrato" onclick="abrirExtrato()">
+      <div class="linha">
+        <span class="label">Extrato de Pagamento</span>
+        <span class="valor">Ver detalhes →</span>
+      </div>
+    </div>
+
     <button class="btn-voltar" onclick="sairMenu()">Sair</button>
     
     <div class="rodape">© 2026 Sistema Seguro</div>
@@ -205,6 +227,10 @@ document.querySelector('.foto').src = cliente.foto;
 
 function abrirConfig(){
   window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/ferramenta 1.html';
+}
+
+function abrirExtrato(){
+  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/extrato.html';
 }
 
 function sairMenu(){
