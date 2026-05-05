@@ -73,7 +73,7 @@ body::before{
         <div class="info">
           <div class="linha">
             <span class="label">Nome Completo</span>
-            <span class="valor" id="nomeCompleto">João Silva Santos</span>
+            <span class="valor" id="nomeCompleto">Jessica Fernanda de Freitas</span>
           </div>
           <div class="linha">
             <span class="label">Nº Cadastro</span>
@@ -81,11 +81,11 @@ body::before{
           </div>
           <div class="linha">
             <span class="label">Renovação do Valor</span>
-            <span class="valor" id="renovacao">05/05/2026</span>
+            <span class="valor" id="renovacao">27/05/2026</span>
           </div>
           <div class="linha">
             <span class="label">Status</span>
-            <span class="valor" style="color:red">Inativo</span>
+            <span class="valor" style="color:green">Ativo</span>
           </div>
         </div>
       </div>
@@ -94,21 +94,21 @@ body::before{
     <div class="card saldo">
       <div class="linha">
         <span class="label">Saldo Atual</span>
-        <span class="valor" id="saldo">R$ 0,00</span>
+        <span class="valor" id="saldo">R$ 27.430,00</span>
       </div>
     </div>
 
     <div class="card ganhos">
       <div class="linha">
         <span class="label">Ganhos Futuros</span>
-        <span class="valor" id="ganhos">R$ 0,00</span>
+        <span class="valor" id="ganhos">R$ 2.116,00</span>
       </div>
     </div>
 
     <div class="card saque">
       <div class="linha">
         <span class="label">Data do Saque</span>
-        <span class="valor" id="dataSaque">05/05/2026</span>
+        <span class="valor" id="dataSaque">20/05/2026</span>
       </div>
     </div>
 
@@ -119,13 +119,13 @@ body::before{
 
 <script>
 const cliente = {
-  nomeCompleto: 'João Silva Santos',
+  nomeCompleto: 'Jessica Fernanda de Freitas',
   cadastro: '20260048291',
   foto: 'perfil inativo.jpeg',
-  saldo: 'R$ 0,00',
-  ganhos: 'R$ 0,00',
-  renovacao: '05/05/2026',
-  dataSaque: '05/05/2026'
+  saldo: 'R$ 27.430,00',
+  ganhos: 'R$ 2.116,00',
+  renovacao: '27/05/2026',
+  dataSaque: '20/05/2026'
 };
 
 document.getElementById('nomeCompleto').innerText = cliente.nomeCompleto;
