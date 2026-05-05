@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Perfil do Cliente</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased}
 body{
   min-height:100vh;
   min-height:100dvh;
   background:url('menu.jpeg') center/cover fixed;
-  color:#fff;
+  color:#f5f5f7;
   padding:16px;
   position:relative;
   display:flex;
@@ -21,43 +22,84 @@ body::before{
   content:'';
   position:fixed;
   top:0;left:0;right:0;bottom:0;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0, 0, 0, 0.65);
   z-index:-1;
 }
-.container{width:100%;max-width:420px;margin:0 auto;position:relative;z-index:1}
-.card{background:rgba(26,26,26,0.85);backdrop-filter:blur(8px);border-radius:16px;padding:20px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.1)}
+.container{width:100%;max-width:400px;margin:0 auto;position:relative;z-index:1}
 
-.topo{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-bottom:18px}
-.lado-foto{display:flex;flex-direction:column;align-items:center;gap:12px}
-.foto{width:64px;height:64px;border-radius:50%;background:#333;object-fit:cover;border:2px solid #7c3aed}
-
-.btn-config{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;color:#fff
+.card{
+  background:rgba(28, 28, 30, 0.72);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:14px;
+  border:0.5px solid rgba(255,255,255,0.15);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
+.topo{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-bottom:20px}
+.lado-foto{display:flex;flex-direction:column;align-items:center;gap:12px}
+.foto{
+  width:68px;height:68px;border-radius:50%;
+  background:#1c1c1e;object-fit:cover;
+  border:2px solid #0A84FF
+}
+
+.btn-config{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(118,118,128,0.24);
+  border:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;color:#f5f5f7;
+  cursor:pointer;
+  transition: all 0.2s ease;
+}
+.btn-config:active{transform:scale(0.96);background:rgba(118,118,128,0.32)}
+
 .info{display:grid;gap:0}
-.linha{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
+.linha{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:0.5px solid rgba(84,84,88,0.6)}
 .linha:last-child{border-bottom:none}
-.label{color:#bbb;font-size:13px}
-.valor{font-weight:600;font-size:13px;text-align:right}
+.label{color:rgba(235,235,245,0.6);font-size:15px;letter-spacing:-0.24px}
+.valor{font-weight:600;font-size:15px;text-align:right;color:#f5f5f7;letter-spacing:-0.24px}
 
-.saldo{background:linear-gradient(135deg,rgba(124,58,237,0.9),rgba(91,33,182,0.9));border:none}
-.saldo .label, .saldo .valor{color:#fff}
-.saldo .valor{font-size:22px}
+.saldo{
+  background:rgba(10, 132, 255, 0.18);
+  border:0.5px solid rgba(10, 132, 255, 0.4);
+}
+.saldo .label{color:rgba(255,255,255,0.8)}
+.saldo .valor{font-size:28px;font-weight:700;letter-spacing:-0.5px}
 
-.ganhos{border:1px solid #7c3aed;background:rgba(26,26,26,0.85)}
-.ganhos .valor{color:#7c3aed;font-size:19px}
+.ganhos{
+  border:0.5px solid rgba(48, 209, 88, 0.4);
+  background:rgba(28, 28, 30, 0.6);
+}
+.ganhos .valor{color:#30D158;font-size:20px;font-weight:600}
 
-.saque{border:1px solid #22c55e;background:rgba(26,26,26,0.85)}
-.saque .valor{color:#22c55e;font-size:16px}
+.saque{
+  border:0.5px solid rgba(100, 210, 255, 0.4);
+  background:rgba(28, 28, 30, 0.6);
+}
+.saque .valor{color:#64D2FF;font-size:17px;font-weight:600}
 
-.btn-voltar{width:100%;padding:14px;margin-top:16px;border:1px solid rgba(255,255,255,0.2);border-radius:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;font-weight:600}
+.btn-voltar{
+  width:100%;
+  padding:15px;
+  margin-top:16px;
+  border:none;
+  border-radius:12px;
+  background:rgba(118,118,128,0.24);
+  backdrop-filter:saturate(180%) blur(20px);
+  color:#fff; /* AGORA BRANCO */
+  font-size:17px;
+  font-weight:600;
+  letter-spacing:-0.24px;
+  cursor:pointer;
+  transition: all 0.2s ease;
+}
+.btn-voltar:active{transform:scale(0.98);background:rgba(118,118,128,0.32)}
 
-.rodape{text-align:center;padding:20px 0 8px 0;color:rgba(255,255,255,0.4);font-size:11px;line-height:1.4}
+.rodape{text-align:center;padding:22px 0 8px 0;color:rgba(235,235,245,0.3);font-size:12px;letter-spacing:-0.08px}
 </style>
 </head>
 <body>
@@ -85,7 +127,7 @@ body::before{
           </div>
           <div class="linha">
             <span class="label">Status</span>
-            <span class="valor" style="color:green">Ativo</span>
+            <span class="valor" style="color:#30D158">Ativo</span>
           </div>
         </div>
       </div>
@@ -115,7 +157,7 @@ body::before{
     <button class="btn-voltar" onclick="sairMenu()">Sair</button>
   </div>
 
-  <div class="rodape">@ 2026 Sistema Seguro. Todos os direitos reservados.</div>
+  <div class="rodape">© 2026 Sistema Seguro</div>
 
 <script>
 const cliente = {
@@ -141,9 +183,8 @@ function abrirConfig(){
 }
 
 function sairMenu(){
-  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/login.html'; // troca aqui pro link do outro menu
+  window.location.href = 'https://ici347.github.io/investimentos-surdos/login cliente 1/login.html';
 }
 </script>
 </body>
 </html>
-
